@@ -4,9 +4,9 @@
 
 // ── EmailJS Config ──────────────────────────
 // ⚠️  REPLACE the values below with your own from https://www.emailjs.com
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← REPLACE THIS
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← REPLACE THIS
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← REPLACE THIS
+const EMAILJS_SERVICE_ID = 'service_hge8uva';   // ← REPLACE THIS
+const EMAILJS_TEMPLATE_ID = 'template_u14yvhy';  // ← REPLACE THIS
+const EMAILJS_PUBLIC_KEY = 'lzgygM1oK5T-X5tec';   // ← REPLACE THIS
 // ────────────────────────────────────────────
 
 (function () {
@@ -58,7 +58,7 @@ const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← REPLACE THIS
       // Move
       p.x += p.vx;
       p.y += p.vy;
-      if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
       if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
       // Draw dot
@@ -311,9 +311,9 @@ const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← REPLACE THIS
   // 11. EXPERIENCE TABS
   // ─────────────────────────────────────────
   const tabWork = $('#tab-work');
-  const tabEdu  = $('#tab-edu');
+  const tabEdu = $('#tab-edu');
   const timelineWork = $('#timeline-work');
-  const timelineEdu  = $('#timeline-education');
+  const timelineEdu = $('#timeline-education');
 
   function switchTab(showEl, hideEl, activeBtn, inactiveBtn) {
     hideEl?.classList.add('hidden');
@@ -328,14 +328,14 @@ const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← REPLACE THIS
   }
 
   tabWork?.addEventListener('click', () => switchTab(timelineWork, timelineEdu, tabWork, tabEdu));
-  tabEdu?.addEventListener('click',  () => switchTab(timelineEdu, timelineWork, tabEdu, tabWork));
+  tabEdu?.addEventListener('click', () => switchTab(timelineEdu, timelineWork, tabEdu, tabWork));
 
   // ─────────────────────────────────────────
   // 12. CONTACT FORM
   // ─────────────────────────────────────────
   const contactForm = $('#contact-form');
-  const submitBtn   = $('#submit-btn');
-  const successMsg  = $('#form-success');
+  const submitBtn = $('#submit-btn');
+  const successMsg = $('#form-success');
 
   function showError(id, msg) {
     const el = $(`#${id}`);
@@ -356,21 +356,21 @@ const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← REPLACE THIS
     clearErrors();
     successMsg?.classList.add('hidden');
 
-    const name    = $('#user_name')?.value.trim();
-    const email   = $('#user_email')?.value.trim();
+    const name = $('#user_name')?.value.trim();
+    const email = $('#user_email')?.value.trim();
     const subject = $('#subject')?.value.trim();
     const message = $('#message')?.value.trim();
 
     let hasError = false;
-    if (!name)            { showError('err-name',    'Please enter your name.'); hasError = true; }
-    if (!email)           { showError('err-email',   'Please enter your email.'); hasError = true; }
+    if (!name) { showError('err-name', 'Please enter your name.'); hasError = true; }
+    if (!email) { showError('err-email', 'Please enter your email.'); hasError = true; }
     else if (!validateEmail(email)) { showError('err-email', 'Please enter a valid email.'); hasError = true; }
-    if (!subject)         { showError('err-subject', 'Please enter a subject.'); hasError = true; }
-    if (!message)         { showError('err-message', 'Please write a message.'); hasError = true; }
+    if (!subject) { showError('err-subject', 'Please enter a subject.'); hasError = true; }
+    if (!message) { showError('err-message', 'Please write a message.'); hasError = true; }
     if (hasError) return;
 
     // Loading state
-    const btnText   = submitBtn?.querySelector('.btn-text');
+    const btnText = submitBtn?.querySelector('.btn-text');
     const btnLoader = submitBtn?.querySelector('.btn-loader');
     btnText?.classList.add('hidden');
     btnLoader?.classList.remove('hidden');
@@ -425,8 +425,8 @@ const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← REPLACE THIS
   // ─────────────────────────────────────────
   window.addEventListener('load', () => {
     updateActiveNavLink();
-    // Animate work timeline items on load
-    timelineWork?.querySelectorAll('.timeline-item').forEach((item, i) => {
+    // Animate education timeline items on load (default active tab)
+    timelineEdu?.querySelectorAll('.timeline-item').forEach((item, i) => {
       setTimeout(() => item.classList.add('visible'), 300 + i * 150);
     });
   });
