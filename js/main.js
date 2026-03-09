@@ -170,9 +170,9 @@ const EMAILJS_PUBLIC_KEY = 'lzgygM1oK5T-X5tec';   // ← REPLACE THIS
   // 6. TYPEWRITER EFFECT
   // ─────────────────────────────────────────
   const roles = [
-    'Full Stack Developer',
-    'UI/UX Designer',
-    'React Specialist',
+    'Software Developer',
+    // 'UI/UX Designer',
+    // 'React Specialist',
     'Problem Solver',
     'Open Source Contributor',
   ];
